@@ -52,8 +52,23 @@
         this.displayTodo();
       },
       toggleAll: function() {
+        //checking for completed todos
+        var completedTodos = 0;
+        for(var i = 0; i <this.todos.length; i++) {
+          if(this.todos[i].completion === true)
+          completedTodos++;
+        }
         //if all todos are completed, toggle to incomplete
-        
+        if(completedTodos === this.todos.length) {
+          for(var i = 0; i < this.todos.length; i++) {
+            this.todos[i].completion = false;
+          }
+        } else {  //otherwise, toggle all todos to completed
+          for(var i = 0; i < this.todos.length; i++) {
+            this.todos[i].completion = true;
+          }
+        }
+        this.displayTodo();
       }
     }
   </script>
