@@ -3,6 +3,7 @@ var todoList = {
 
   displayTodo: function(){
     //todo list is empty
+    debugger;
     if(this.todos.length === 0) {
       console.log("Todo list is empty.")
     } else {
